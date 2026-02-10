@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Present ❤</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* PASSWORD */
+#lockScreen{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+input{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin:10px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
+
+/* LETTER SCREEN */
+#letterScreen{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.envelope{
+    position:relative;
+    width:220px;
+    height:150px;
+    cursor:pointer;
+}
+
+.base{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:white;
+    border-radius:10px;
+}
+
+.flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-bottom:80px solid #ff4d6d;
+    top:-80px;
+    transform-origin:bottom;
+    transition:0.8s;
+}
+
+.envelope.open .flap{
+    transform:rotateX(180deg);
+}
+
+.letterCard{
+    position:absolute;
+    width:340px;
+    max-width:90vw;
+    height:420px;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    overflow:auto;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,150px);
+    opacity:0;
+    transition:1s;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    text-align:left;
+}
+
+.letterCard.show{
+    transform:translate(-50%,-200px);
+    opacity:1;
+}
+
+/* MAIN */
+#main{
+    display:none;
+}
+
+header{
+    font-size:40px;
+    padding:30px;
+    color:white;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    width:85%;
+    max-width:750px;
+    margin:30px auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.card h2{
+    color:#ff4d6d;
+}
+
+/* slideshow */
+.slide{
+    display:none;
+    width:100%;
+    border-radius:15px;
+}
+.active{display:block;}
+
+/* floating love notes */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:floatUp 6s linear forwards;
+}
+
+@keyframes floatUp{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div id="lockScreen">
+    <h1>Enter Password 💖</h1>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">Open</button>
+</div>
+
+<!-- ENVELOPE + LETTER -->
+<div id="letterScreen">
+
+    <div class="envelope" id="env">
+        <div class="flap"></div>
+        <div class="base"></div>
+    </div>
+
+    <div class="letterCard" id="letterText">
+        <p>
+<b>My Dearest Lilly,</b><br><br>
+
+<p>Im rly sorry for everything ive done ya daloo3ti i rly love you so fuckin much im ry sorry i promise you ill try my best to change ya daloo3it baba cuh u acc deserve the best ya mama im rly sorry for how i always treat you when u get upset ik i was wrong im sorry mama u acc deserve the best cuh you are lit the most perfect girl ive eva seen in my entire life.</p>
+
+<p>U r lit the first thing i think of when i wake up lit no matter when is the time n i FUCKIN LOVE IT  WHEN U CALL ME TO WAKE ME UP N WHENEVA U SAY that u js called to show lamees how perfect am i n i rly like it cuh like u r proving to me that im treating u the way u wanna be treated n ill always try my best to treat u the best ya daloo3it baba cuh u acc deserve the best. </p>
+
+<p>My mommy the most beautiful girl eva the most perfect girl eva n the most hottest girl ive eva seen in my entire life you are lit perfect in every way possible , you are lit so fuckin beautiful,ur eyes ur nose ur lips ur cheeks ur hair ur eyelashes ur teeth YOUR BODY 😍😍esp dat small waist n back w ummm curves anyways mashallah u acc dont havta workout n ull still have dat cute hot body like damn.  </p>
+
+<p>I rly hope we neva end our rs n get married soon inshallah ya daloo3it baba ion even wanna think abt leaving you mommy like acc id neva wanna imagine it cuh i acc cant i rly love you sosososoosososos much wallahi mama happy valentines ya daloo3ti mwah. </p>
+<br><br>
+With all my love,<br><b>Moody ❤</b>
+        </p>
+
+        <button onclick="showMain()">Open My Surprise ❤</button>
+    </div>
+
+</div>
+
+<!-- MAIN SITE -->
+<div id="main">
+
+<header>For the love of my life ❤</header>
+
+<!-- Intro -->
+<div class="card">
+<h2>Hi My Love ❤</h2>
+<p>Hi ya daloo3it baba im sorry for not sending you any letters for the past few days its js yeah i was preparing this website for you ya mommy i hope u love it 💗💗</p>
+</div>
+
+<!-- Slideshow -->
+<div class="card">
+<h2>My Angel ❤</h2>
+<img src="love.jpeg" class="main-photo" width="700" height="1200" alt="">
+</div>
+
+
+<div class="card">
+<p>
+I rly dk frm where to start this bas yeah my mommy my baskota daloo3ti ru7 2albi my angel everything in my life lit , im litt so in love w you mama like idk frm where to start it since the day i first met you i lit knew u were the one like you are so beautiful so cute so pretty so kind so sweet u r js so perfect ya mama wallahi 500+ days tghtr n inshallah to the billionth mama inshallah we will stay tghtr until we die cuh i acc cant live w/ you id lit do anything for you kms for you risk my life for you do anything to chase sm1 as perfect as you mama i rly love you sosososososo much wallahi<br><br>
+
+<b style="font-size:22px; color:#ff4d6d;">I LOVE YOU ❤</b>
+</p>
+</div>
+
+<!-- Reasons I love you -->
+<div class="card">
+<h2>Why I Love You 💌</h2>
+<p id="loveText">Click the button 😊</p>
+<button onclick="showReason()">Tell me</button>
+</div>
+
+<!-- Countdown -->
+<div class="card">
+<h2>Time With You ⏳</h2>
+<p id="daysCounter"></p>
+</div>
+
+<!-- Special Dates -->
+<div class="card">
+<h2>Our Special Dates 📅❤</h2>
+
+<p id="date1"></p>
+<p id="date2"></p>
+
+</div>
+
+<!-- Secret surprise -->
+<div class="card">
+<h2>Secret Surprise 🎁</h2>
+<button onclick="alert('You are the most prettiest n perfect person ive ever seen in this entire life ❤')">Open Secret</button>
+</div>
+
+</div>
+
+<!-- Final Fun Card -->
+<div class="card">
+    <h2>One Last Thing 😉</h2>
+    <p style="font-size:20px;">
+        If you had fun with this… pay up with a kiss 😘
+    </p>
+
+    <button onclick="thumbsUp()" style="font-size:22px;">
+        👍
+    </button>
+
+    <p id="thumbMsg" style="margin-top:15px; color:#ff4d6d; font-weight:bold;"></p>
+</div>
+
+<script>
+const lockScreen = document.getElementById("lockScreen");
+const letterScreen = document.getElementById("letterScreen");
+const envelope = document.getElementById("env");
+const letterText = document.getElementById("letterText");
+const main = document.getElementById("main");
+
+/* PASSWORD */
+function checkPassword(){
+    if(document.getElementById("password").value === "17/5"){
+        lockScreen.style.display="none";
+        letterScreen.style.display="flex";
+    } else {
+        alert("Wrong password 💔");
+    }
+}
+
+/* Envelope */
+envelope.addEventListener("click",()=>{
+    envelope.classList.add("open");
+    setTimeout(()=> letterText.classList.add("show"), 600);
+});
+
+/* Show main */
+function showMain(){
+    letterScreen.style.display="none";
+    main.style.display="block";
+    startHearts();
+}
+
+
+
+/* Reasons */
+const reasons=[
+"Your smile lights up my world",
+"You make me feel safe",
+"You understand me like no one else",
+"Every moment with you is special",
+"You are my favorite person",
+"You make my life perfect"
+];
+
+function showReason(){
+    const r=Math.floor(Math.random()*reasons.length);
+    document.getElementById("loveText").innerText=reasons[r];
+}
+
+/* Countdown (CHANGE THE DATE BELOW) */
+const startDate=new Date("2024-09-04"); // change to your date
+const today=new Date();
+const diff=Math.floor((today-startDate)/(1000*60*60*24));
+document.getElementById("daysCounter").innerText=
+"We've known each other for "+diff+" days ❤";
+
+   /* IMPORTANT DATES */
+function daysSince(dateString){
+    const date = new Date(dateString);
+    const today = new Date();
+    return Math.floor((today - date) / (1000*60*60*24));
+}
+
+const talkDays = daysSince("2024-09-04");
+const loveDays = daysSince("2024-09-18");
+
+document.getElementById("date1").innerText =
+"💬 First time we talked: 4 sep 2024 (" + talkDays + " days ago)";
+
+document.getElementById("date2").innerText =
+"❤ First 'I love you': 18 sep 2024 (" + loveDays + " days ago)";
+
+/* Floating love notes */
+function startHearts(){
+    setInterval(()=>{
+        const h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML=Math.random()>0.5 ? "❤" : " I Love you";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),6000);
+    },400);
+}
+
+function thumbsUp(){
+    document.getElementById("thumbMsg").innerText =
+    "Deal accepted 😘❤ You owe me a BILLION!";
+
+    for(let i=0;i<15;i++){
+        const h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML="❤";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),6000);
+    }
+}
+</script>
+
+</body>
+</html>
